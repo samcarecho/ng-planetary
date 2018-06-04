@@ -1,0 +1,22 @@
+<h2>Some Planets</h2>
+
+<div>
+  <label>Planet name:
+    <input #planetName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="addPlanet(planetName.value); planetName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="planets">
+  <li *ngFor="let planet of planets">
+    <a routerLink="/detail/{{planet.id}}">
+      <span class="badge">{{planet.votes}}</span> {{planet.name}}
+    </a>
+    <button class="delete" title="delete planet"
+            (click)="deletePlanet(planet)">x</button>
+  </li>
+</ul>
+

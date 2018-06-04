@@ -1,6 +1,6 @@
-# AngularApp
+# NG-Planetary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+install dependencies and run it.
 
 ## Development server
 
