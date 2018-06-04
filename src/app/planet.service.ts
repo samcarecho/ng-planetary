@@ -17,7 +17,6 @@ const httpOptions = {
 export class PlanetService {
 
   private planetsUrl = 'api/planets';  // URL to web api
-  private data: dataItem[];
 
   constructor(
     private http: HttpClient,
@@ -69,7 +68,7 @@ export class PlanetService {
   votePlanet (planet: Planet): Observable<any> {
     planet.votes++;
     return this.http.put(this.planetsUrl, planet, httpOptions).pipe(
-      tap(_ => this.log(`updated planet rank=${planet.votes}`)),
+      tap(_ => this.log(`updated planet votes=${planet.votes}`)),
       catchError(this.handleError<any>('updatePlanet'))
     );
   }
@@ -119,7 +118,7 @@ export class PlanetService {
     );
   }
 
-  orderPlanets(data: dataItem[],  field: string) {
+  orderPlanets(data: any,  field: string) {
     data.sort((a, b) => a[field] > b[field] ? -1 : 1);
     return data;
   }

@@ -36,7 +36,7 @@ export class PlanetDetailComponent implements OnInit {
 
   votePlanet(): void {
     this.planetService.votePlanet(this.planet)
-      .subscribe();
+      .subscribe(planet => this.goBack());
   }
 
   goBack(): void {

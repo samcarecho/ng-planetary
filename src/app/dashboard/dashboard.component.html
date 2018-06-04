@@ -1,10 +1,11 @@
-<h3>Top Planets</h3>
+<h3>Most Voted Planets</h3>
 <div class="grid grid-pad">
   <a *ngFor="let planet of planets"
      class="col-1-4"
      routerLink="/detail/{{planet.id}}">
     <div class="module planet">
-      <h4>{{planet.name}}</h4>
+      <h3>{{planet.name}}</h3>
+      <h4>{{planet.votes}}</h4>
     </div>
   </a>
 </div>

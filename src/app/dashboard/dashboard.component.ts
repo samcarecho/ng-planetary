@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getPlanets(): void {
     this.planetService.getPlanets()
-      .subscribe(planets => this.planets = planets.slice(1, 5));
+      .subscribe(planets => this.planets = planets.slice(0, 4));
   }
 }
 
